@@ -25,11 +25,11 @@ jobs: build:
         run: |
           aws ecr get-login-password --region ${{
 secrets.EC2_INSTANCE_REGION }} | docker login --username AWS --password-
-stdin <your-ecr-repo-url>
+stdin 058264430728.dkr.ecr.us-east-1.amazonaws.com/reactapp
       - name: Tag and push Docker image to ECR
         run: |
-          docker tag react-app:latest <your-ecr-repo-url>:latest
-          docker push <your-ecr-repo-url>:latest
+          docker tag react-app:latest 058264430728.dkr.ecr.us-east-1.amazonaws.com/reactapp:latest
+          docker push 058264430728.dkr.ecr.us-east-1.amazonaws.com/reactapp:latest
       - name: Deploy to EC2
         env:
           EC2_USER: ${{ secrets.EC2_USER }}
