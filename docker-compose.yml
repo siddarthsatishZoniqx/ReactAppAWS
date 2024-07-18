@@ -1,6 +1,6 @@
 version: '3'
 services:
   react-app:
-    image: <your-ecr-repo-url>:latest
+    image: 058264430728.dkr.ecr.us-east-1.amazonaws.com/reactapp:latest
     ports:
 - "80:80"
